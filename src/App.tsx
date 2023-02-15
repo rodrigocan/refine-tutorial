@@ -12,6 +12,7 @@ import {
 } from "@pankod/refine-mui";
 
 import dataProvider from "@pankod/refine-simple-rest";
+import { MuiInferencer } from "@pankod/refine-inferencer/mui";
 import routerProvider from "@pankod/refine-react-router-v6";
 import axios, { AxiosRequestConfig } from "axios";
 import { ColorModeContextProvider } from "contexts";
@@ -99,6 +100,15 @@ function App() {
           routerProvider={routerProvider}
           authProvider={authProvider}
           LoginPage={Login}
+          resources={[
+            {
+              name: "products",
+              list: MuiInferencer,
+              show: MuiInferencer,
+              create: MuiInferencer,
+              edit: MuiInferencer
+            }
+          ]}
         />
       </RefineSnackbarProvider>
     </ColorModeContextProvider>
